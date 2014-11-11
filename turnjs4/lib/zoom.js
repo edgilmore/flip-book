@@ -28,7 +28,7 @@ zoomMethods = {
     options = $.extend({}, zoomOptions, opts);
 
     if (!options.flipbook || !options.flipbook.turn('is')) {
-      throw error('options.flipbook is required');
+      throw error('options.$flipbook is required');
     }
 
     has3d = 'WebKitCSSMatrix' in window || 'MozPerspective' in document.body.style;

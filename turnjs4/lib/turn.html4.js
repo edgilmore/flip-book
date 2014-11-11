@@ -339,7 +339,7 @@ turnMethods = {
   
   },
 
-  // Centers the flipbook
+  // Centers the $flipbook
 
   center: function(page) {
     
@@ -369,7 +369,7 @@ turnMethods = {
 
   },
 
-  // Destroys the flipbook
+  // Destroys the $flipbook
 
   destroy: function () {
 
@@ -410,7 +410,7 @@ turnMethods = {
 
   },
 
-  // Checks if this element is a flipbook
+  // Checks if this element is a $flipbook
 
   is: function() {
 
@@ -684,7 +684,7 @@ turnMethods = {
     // Move the pages behind `page`
     turnMethods._movePages.call(this, page, -1);
 
-    // Resize the size of this flipbook
+    // Resize the size of this $flipbook
     data.totalPages = data.totalPages-1;
 
     // Check the current view
@@ -804,7 +804,7 @@ turnMethods = {
   
   },
 
-  // Gets and sets the direction of the flipbook
+  // Gets and sets the direction of the $flipbook
 
   direction: function(dir) {
 
@@ -1458,7 +1458,7 @@ turnMethods = {
     }
   },
 
-  // Updates the position and size of the flipbook's shadow
+  // Updates the position and size of the $flipbook's shadow
 
   _updateShadow: function() {
     

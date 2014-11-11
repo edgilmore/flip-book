@@ -199,7 +199,7 @@ turnMethods = {
 
     this.turn('page', options.page);
 
-    // This flipbook is ready
+    // This $flipbook is ready
 
     data.done = true;
 
@@ -295,7 +295,7 @@ turnMethods = {
               css: {position: 'absolute',
               overflow: 'hidden'}});
 
-          // Append to this flipbook
+          // Append to this $flipbook
           this.append(data.pageWrap[page]);
 
           if (!data.pagePlace[page]) {
@@ -341,7 +341,7 @@ turnMethods = {
   
   },
 
-  // Centers the flipbook
+  // Centers the $flipbook
 
   center: function(page) {
     
@@ -374,7 +374,7 @@ turnMethods = {
 
   },
 
-  // Destroys the flipbook
+  // Destroys the $flipbook
 
   destroy: function () {
 
@@ -417,7 +417,7 @@ turnMethods = {
 
   },
 
-  // Checks if this element is a flipbook
+  // Checks if this element is a $flipbook
 
   is: function() {
 
@@ -719,7 +719,7 @@ turnMethods = {
       // Move the pages
       turnMethods._movePages.call(this, page, -1);
 
-      // Resize the size of this flipbook
+      // Resize the size of this $flipbook
       data.totalPages = data.totalPages-1;
 
       // Check the current view
@@ -865,7 +865,7 @@ turnMethods = {
   
   },
   
-  // Gets and sets the direction of the flipbook
+  // Gets and sets the direction of the $flipbook
 
   direction: function(dir) {
 
@@ -923,7 +923,7 @@ turnMethods = {
     return false;
   },
 
-  // Gets the data stored in the flipbook
+  // Gets the data stored in the $flipbook
 
   data: function() {
     
@@ -1696,7 +1696,7 @@ turnMethods = {
     return this;
   },
 
-  // Updates the position and size of the flipbook's shadow
+  // Updates the position and size of the $flipbook's shadow
 
   _updateShadow: function() {
     
