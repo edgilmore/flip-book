@@ -1,0 +1,53 @@
+.large-top-padding {
+    padding-top: 250px;
+}
+.no-left-padding {
+    padding-left: 0;
+}
+.o2blue {
+    background-color: #68c8c6;
+}
+.grid {
+    border: 3px solid white;
+    height: 155px;
+}
+.gridb {
+    border: 3px solid #68c8c6;
+    height: 151px;
+}
+#pager {
+    color: #68c8c6;
+    font-size: 56px;
+}
+#pageNumber {
+    color: #f278ad;
+}
+.page4 {
+    width: 482px;
+    height: 612px;
+    background-color: white;
+}
+.page4-long {
+    height: 310px;
+    border-bottom: 3px solid #68c8c6;
+    border: 3px solid white;
+}
+.page7 {
+    width: 482px;
+    height: 612px;
+    background-color: white;
+    border: 6px solid #68c8c6;
+}
+.page7-long {
+    height: 302px;
+    border: 3px solid #68c8c6;
+}
+.page7-bottom-inner {
+    border-bottom: 1px solid #68c8c6;
+}
+.page7-bottom-outer {
+    border-bottom: 3px solid #68c8c6;
+}
+.first-row {
+    margin-left: -10px;
+}
