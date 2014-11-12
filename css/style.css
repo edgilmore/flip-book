@@ -1,6 +1,3 @@
-body.hide-overflow {
-    overflow: hidden;
-}
 /*pager*/
 #pager {
     color: #66CCCC;
@@ -37,19 +34,6 @@ body.hide-overflow {
 }
 
 /*helpers*/
-.t {
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-.tc {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-.rel {
-    position: relative;
-}
 .O2-blue {
     background-color: #66CCCC;
 }

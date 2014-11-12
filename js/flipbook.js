@@ -23,7 +23,7 @@ $('#next').click(function () {
 $('#previous').click(function() {
     $flipbook.turn('disable', false).turn('previous').turn('disable', true);
     setPagerNumber();
-    /*hack to hide $pager on flip back to first page - EWG*/
+    /*hack to hide $pager on flip previous to first page - EWG*/
     if($flipbook.turn('page') === 1){
         $pager.hide();
     }
@@ -33,7 +33,7 @@ $('#previous').click(function() {
     'use strict';
 
     var module = {
-        ratio: 1.0,
+        ratio: 1.38,
         init: function (id) {
             var me = this;
             // if older browser then don't run javascript
@@ -79,8 +79,7 @@ $('#previous').click(function() {
                 gradients: true,
                 acceleration: true,
                 page: 2,
-                display: 'double',
-                autoCenter: true
+                display: 'double'
             }).turn('disabled', true);
             // hide the body overflow
             document.body.className = 'hide-overflow';
