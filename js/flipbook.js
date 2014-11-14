@@ -2,9 +2,8 @@
 var $flipbook = $('#book');
 var $pager =  $('#pager');
 /*function to set page number text below flip book*/
-function setPagerNumber() {
-    if($flipbook.turn('page') > 0) {
-        console.log($flipbook.turn('page') /2 );
+function setPagerNumber(pageNumber) {
+    if($flipbook.turn('page') > pageNumber) {
         $('#pageNumber').text(Math.floor($flipbook.turn('page') / 2 ));
         $pager.show();
     }
@@ -16,17 +15,17 @@ function setPagerNumber() {
  * next page
  */
 $('#next').click(function () {
-    $flipbook.turn('disable', false).turn('next').turn('disable', true);
-    setPagerNumber();
+    $flipbook.turn('next');
+    setPagerNumber(0);
+    /*return false to avoid post back click handler*/
+    return false;
 });
 //previous page
 $('#previous').click(function() {
-    $flipbook.turn('disable', false).turn('previous').turn('disable', true);
-    setPagerNumber();
-    /*hack to hide $pager on flip previous to first page - EWG*/
-    if($flipbook.turn('page') === 1){
-        $pager.hide();
-    }
+    $flipbook.turn('previous');
+    setPagerNumber(1);
+    /*return false to avoid post back on click handler*/
+    return false;
 });
 /* function used to dynamically resize the flip book based on window size */
 (function () {
@@ -80,9 +79,17 @@ $('#previous').click(function() {
                 acceleration: true,
                 page: 2,
                 display: 'double'
-            }).turn('disabled', true);
-            // hide the body overflow
-            document.body.className = 'hide-overflow';
+            });
+            /*bind turn event on touch events to set pager number*/
+            $(this.el).bind('turn', function(event, page, view){
+                setPagerNumber(1);
+            });
+            $(this.el).bind('turning', function(event, page, view){
+                /*prevent page turn to the first page*/
+                if (page === 1) {
+                    event.preventDefault();
+                }
+            });
         }
     };
 
