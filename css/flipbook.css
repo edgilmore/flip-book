@@ -20,11 +20,11 @@ body{
 }
 .control-container-left{
     height: 100%;
-    width: 1px;
+    width: 1px !important;
 }
 .control-container-right{
     height: 100%;
-    width: 1px;
+    width: 1px !important;
 }
 /*arrow*/
 .arrow-left{
