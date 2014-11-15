@@ -34,18 +34,23 @@
         <div><img src="images/back-cover.png" alt=""/></div>
     </div>
 </div>
+<div style="padding-top: 10%;"></div>
 <div class="row hidden-for-small">
-    <div class="medium-12 column">
-        <div class="left">
-            <a href="#" id="previous" class="arrow left-arrow left">
-                <img src="images/WEB-Spread1_11.gif" alt="image of left arrow">
-            </a>
-            <!--<img class="ribbon-left left" src="images/WEB-Spread1_18.gif" alt=""/>-->
+    <div id="tablet-desktop-view" class="medium-12">
+        <div class="control-container-left side-bar-container hidden-for-medium-down left">
+            <div class="arrow-container-left left">
+                <a href="#" id="previous"><img class="arrow-left" src="images/WEB-Spread1_11.gif" alt="image of left arrow"></a>
+            </div>
+            <div>
+                <div class="ribbon-container-left left">
+                    <img class="ribbon-left" src="images/WEB-Spread1_18.png" alt=""/>
+                </div>
+            </div>
         </div>
         <div id="book" class="book left">
             <!--- each div in here becomes a "page" --->
-            <div class="page hard"><img src="images/WEB-Spread1_03.png" alt=""/><!--- this is empty so that you can start the first page on the left ---></div>
-            <div class="page hard"><img src="images/WEB-Spread1_03.png" alt=""/></div>
+            <div class="page hard"><img src="images/WEB-Spread-Cover-1_03.png" alt=""/><!--- this is empty so that you can start the first page on the left ---></div>
+            <div class="page hard"><img src="images/WEB-Spread-Cover-1_03.png" alt=""/></div>
             <div class="page"><img src="images/WEB-Spread1_04.png" alt=""/></div>
             <div class="page"><img src="images/page3.png" alt=""/></div>
             <div class="page"></div>
@@ -58,19 +63,27 @@
             <div class="page"><img src="images/page11.png" alt=""/></div>
             <div class="page"><img src="images/page12.png" alt=""/></div>
             <div class="page"><img src="images/page13.png" alt=""/></div>
-            <div class="page"><img src="images/page14.png" alt=""/></div>
+            <div class="page hard"><img src="images/page14.png" alt=""/></div>
             <div class="page hard"><img src="images/back-cover.png" alt=""/></div>
         </div>
-        <div class="left">
-            <a href="#" id="next" class="arrow right-arrow left">
-                <img src="images/WEB-Spread1_13.gif" alt="image of right arrow">
-            </a>
-            <!--<img class="ribbon-right" src="images/WEB-Spread1_18.gif" alt=""/>-->
+        <div class="control-container-right hidden-for-medium-down left">
+            <div>
+                <div class="ribbon-container-right left">
+                    <img class="ribbon-right" src="images/WEB-Spread1_03.png" alt=""/>
+                </div>
+            </div>
+            <div class="arrow-container-right left">
+                <a href="#" id="next"><img class="arrow-right" src="images/WEB-Spread1_13.png" alt="image of right arrow"></a>
+            </div>
         </div>
     </div>
 </div>
 <div class="row hidden-for-small">
-    <div id="pager" class="O2-blue small-1 small-centered column">{<span id="pageNumber">1</span>}</div>
+    <!--<div id="pager" class="O2-blue small-1 small-centered column">{<span id="pageNumber">1</span>}</div>-->
+    <!--new pager-->
+    <div id="pager" class="small-3 small-centered  column">
+        <div><span id="page-number-one" class="pacifico O2-red">1</span><span class="total-pages"> of <span id="page-number-two"></span></span></div>
+    </div>
 </div>
     <!--Import jquery and $flipbook javascript libraries-->
     <!--remove jquery import for production-->

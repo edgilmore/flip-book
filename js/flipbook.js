@@ -1,15 +1,23 @@
+/*Author: Ed Gilmore
+* Date: 11-11-2014
+* Description: Flip book project for Origami Owl. Holiday season 2014. The code below contains the responsive code for the turnjs library */
+
 /*variables that hold jquery objects*/
 var $flipbook = $('#book');
 var $pager =  $('#pager');
 /*function to set page number text below flip book*/
 function setPagerNumber(pageNumber) {
     if($flipbook.turn('page') > pageNumber) {
-        $('#pageNumber').text(Math.floor($flipbook.turn('page') / 2 ));
+        $('#page-number-one').text(Math.floor($flipbook.turn('page') / 2 ));
         $pager.show();
     }
     else {
         $pager.hide();
     }
+}
+/*function to set page number text for count of total pages*/
+function getTotalPages(){
+    $('#page-number-two').text(Math.floor($flipbook.turn('pages') / 2));
 }
 /* click handlers for buttons
  * next page
@@ -81,17 +89,19 @@ $('#previous').click(function() {
                 display: 'double'
             });
             /*bind turn event on touch events to set pager number*/
-            $(this.el).bind('turn', function(event, page, view){
+            $(this.el).bind('turn', function(){
                 setPagerNumber(1);
             });
-            $(this.el).bind('turning', function(event, page, view){
-                /*prevent page turn to the first page*/
+            $(this.el).bind('turning', function(event, page){
+                //prevent page turn to the first page
                 if (page === 1) {
                     event.preventDefault();
                 }
             });
+            /*add over flow class to body and initial count of total pages text*/
+            document.body.className = 'hide-overflow';
+            getTotalPages();
         }
     };
-
     module.init('book');
 }());

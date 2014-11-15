@@ -1,38 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+body{
+    overflow:hidden;
+}
 /*pager*/
 #pager {
-    font-size: 56px;
+    font-size: 3.25em;
 }
-#pageNumber {
-    color: #f278ad;
+.total-pages{
+    color: #66CCCC;
+    font-size: 0.65em;
 }
 /*mobile view*/
 #mobile-view > div {
     padding: 10px 0;
 }
-/*arrow controls*/
-.arrow{
+.side-bar-container{
+    padding-top: 20%;
+}
+.control-container-left{
+    height: 100%;
+    width: 1px;
+}
+.control-container-right{
+    height: 100%;
+    width: 1px;
+}
+/*arrow*/
+.arrow-left{
+    position: absolute;
+    top: 120%;
+    left: -115%;
+    height: 50px;
+    width: 33px;
+}
+.arrow-right {
+    position: absolute;
+    top: -70%;
+    left: 23%;
+    height: 50px;
+    width: 33px;
+}
+.arrow-container-left{
     position: relative;
-    top: 15em;
+    height: 50px;
+    width: 33px;
+    margin: 0;
     z-index: 1;
 }
-.arrow.left-arrow{
-    left: -13.5%;
-}
-.arrow.right-arrow{
-    right: -14.5%;
+.arrow-container-right {
+    position: relative;
+    margin: 0;
+    height: 50px;
+    width: 33px;
 }
 /*ribbon*/
 .ribbon-left{
-    position: relative;
-    top: 22em;
-    left: -90%;
+    position: absolute;
+    top: 28%;
+    left: -103%;
+    height: 321px;
+    width: 120px;
     z-index: 1;
 }
 .ribbon-right{
-    position: relative;
-    top: 22em;
-    right: 0;
+    position: absolute;
+    top: -27%;
+    right: -6%;
+    height: 286px;
+    width: 80px;
     z-index: 1;
+}
+.ribbon-container-left {
+    position: relative;
+    margin: 0;
+    height: 321px;
+    width: 120px;
+}.ribbon-container-right {
+    position: relative;
+    margin: 0;
+    height: 286px;
+    width: 80px;
 }
 /*book*/
 .book {
@@ -69,3 +117,47 @@
 .O2-blue {
     color: #66CCCC;
 }
+.O2-red{
+    color: #D04D5D;
+}
+.pacifico{
+    font-family: 'Pacifico', cursive;
+}
+
+/*media*/
+@media screen and (max-width: 1024px)
+    and (min-width: 768px){
+    .arrow-right {
+        position: absolute;
+        top: 500%;
+        left: 12%;
+        height: 50px;
+        width: 33px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .arrow-right{
+        position: relative;
+        top: 350%;
+        left: 12%;
+        height: 50px;
+        width: 33px;
+    }
+}
+
+@media screen and (min-width: 600px ) and (max-width: 1023px){
+    #mobile-view{
+        margin-left: 8.25% !important;
+    }
+    #tablet-desktop-view{
+        margin-left: 4.25%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #tablet-desktop-view{
+        margin-left: 4.25%;
+    }
+}
+
