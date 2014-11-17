@@ -15,6 +15,7 @@ body{
 #mobile-view > div {
     padding: 10px 0;
 }
+/*Containers*/
 .side-bar-container{
     padding-top: 20%;
 }
@@ -113,9 +114,18 @@ body{
     box-shadow:inset 0 0 5px #666;
     font-weight:bold;
 }
+/*Gifts Layout Grid*/
+#gifts-layout-grid{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
 /*helpers*/
 .O2-blue {
     color: #66CCCC;
+}
+.O2-blue-background{
+    background-color: #66CCCC;
 }
 .O2-red{
     color: #D04D5D;
