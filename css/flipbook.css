@@ -118,15 +118,18 @@ body{
     font-weight:bold;
 }
 /*Gifts Layout Grid*/
-#gifts-layout-grid{
-    height: 100%;
-    width: 100%;
+#gifts-50-layout-grid{
     background-color: #ffffff
 }
-.grid-section{
-    height: 25%;
-    width: 25%;
-    display: block;
+#gifts-100-layout-grid{
+    padding-top: 1%;
+    background-color: #66CCCC;
+}
+#gifts-100-layout-grid .row:first-child{
+    padding: 1% 4% 0;
+}
+#gifts-100-layout-grid .row{
+    padding: 0 4%;
 }
 #grid-top{
     padding-top: 2.5%
@@ -135,12 +138,13 @@ body{
 .tile{
     padding: 3px;
 }
+/*Faves Layout Grid*/
+#our-faves{
+    background-color: #ffffff;
+}
 /*helpers*/
 .O2-blue {
     color: #66CCCC;
-}
-.O2-blue-background{
-    background-color: #66CCCC;
 }
 .O2-red{
     color: #D04D5D;
