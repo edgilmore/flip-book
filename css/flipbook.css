@@ -4,7 +4,7 @@
 #mobile-view > div {
     padding: 10px 0;
 }
-#mobile-view div:first-child{
+#mobile-view #mobile-page-one{
     padding: 0 0 10px 0 !important;
 }
 /*---------------------------------------------- Desktop / Tablet View -----------------------------------------------*/
@@ -144,17 +144,26 @@ body{
     background-color: #ffffff;
 }
 /*helpers*/
-.O2-blue {
+.o2-blue {
     color: #66CCCC;
 }
-.O2-blue-background {
+.o2-blue-background {
     background-color: #66CCCC;
 }
-.O2-red{
+.o2-red {
     color: #D04D5D;
 }
 .pacifico{
     font-family: 'Pacifico', cursive;
+}
+.banner-font-size {
+    font-size: 2.15em;
+}
+.banner-price-font-size{
+    font-size: 1.55em;
+}
+.upper-case-text{
+    text-transform: uppercase;
 }
 /*--------------------------------------------------------- media queries --------------------------------------------*/
 @media screen and (max-width: 1024px)
