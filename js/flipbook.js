@@ -50,7 +50,7 @@ $('#previous').click(function() {
                 this.plugins();
 
                 // on window resize, update the plugin size
-                window.addEventListener('resize', function (e) {
+                window.addEventListener('resize', function () {
                     var size = me.resize();
                     $(me.el).turn('size', size.width, size.height);
                 });
@@ -86,7 +86,8 @@ $('#previous').click(function() {
                 gradients: true,
                 acceleration: true,
                 page: 2,
-                display: 'double'
+                display: 'double',
+                height: 612
             });
             /*bind turn event on touch events to set pager number*/
             $(this.el).bind('turn', function(){

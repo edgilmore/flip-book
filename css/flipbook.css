@@ -15,6 +15,9 @@ body{
 #mobile-view > div {
     padding: 10px 0;
 }
+#mobile-view div:first-child{
+    padding: 0 0 10px 0 !important;
+}
 /*Containers*/
 .side-bar-container{
     padding-top: 20%;
@@ -105,7 +108,7 @@ body{
     padding: 0 !important;
 }
 .book .hard{
-    background:#66CCCC !important;
+    background: #fff /*#66CCCC*/ !important;
     color:#333;
     -webkit-box-shadow:inset 0 0 5px #666;
     -moz-box-shadow:inset 0 0 5px #666;
@@ -118,7 +121,19 @@ body{
 #gifts-layout-grid{
     height: 100%;
     width: 100%;
-    position: relative;
+    background-color: #ffffff
+}
+.grid-section{
+    height: 25%;
+    width: 25%;
+    display: block;
+}
+#grid-top{
+    padding-top: 2.5%
+}
+/*Grid Tiles*/
+.tile{
+    padding: 3px;
 }
 /*helpers*/
 .O2-blue {
@@ -133,8 +148,7 @@ body{
 .pacifico{
     font-family: 'Pacifico', cursive;
 }
-
-/*media*/
+/*media queries*/
 @media screen and (max-width: 1024px)
     and (min-width: 768px){
     .arrow-right {
