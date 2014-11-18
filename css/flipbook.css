@@ -1,5 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
-
+/*------------------------------------------------ Mobile View -------------------------------------------------------*/
+/*mobile view*/
+#mobile-view > div {
+    padding: 10px 0;
+}
+#mobile-view div:first-child{
+    padding: 0 0 10px 0 !important;
+}
+/*---------------------------------------------- Desktop / Tablet View -----------------------------------------------*/
 body{
     overflow:hidden;
 }
@@ -10,13 +18,6 @@ body{
 .total-pages{
     color: #66CCCC;
     font-size: 0.65em;
-}
-/*mobile view*/
-#mobile-view > div {
-    padding: 10px 0;
-}
-#mobile-view div:first-child{
-    padding: 0 0 10px 0 !important;
 }
 /*Containers*/
 .side-bar-container{
@@ -81,11 +82,11 @@ body{
     height: 321px;
     width: 120px;
 }.ribbon-container-right {
-    position: relative;
-    margin: 0;
-    height: 286px;
-    width: 80px;
-}
+     position: relative;
+     margin: 0;
+     height: 286px;
+     width: 80px;
+ }
 /*book*/
 .book {
     margin: 0 auto;
@@ -146,15 +147,18 @@ body{
 .O2-blue {
     color: #66CCCC;
 }
+.O2-blue-background {
+    background-color: #66CCCC;
+}
 .O2-red{
     color: #D04D5D;
 }
 .pacifico{
     font-family: 'Pacifico', cursive;
 }
-/*media queries*/
+/*--------------------------------------------------------- media queries --------------------------------------------*/
 @media screen and (max-width: 1024px)
-    and (min-width: 768px){
+and (min-width: 768px){
     .arrow-right {
         position: absolute;
         top: 500%;
@@ -185,4 +189,3 @@ body{
         margin-left: 4.25%;
     }
 }
-
