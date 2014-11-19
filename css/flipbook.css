@@ -18,6 +18,7 @@ body{
 .total-pages{
     color: #66CCCC;
     font-size: 0.65em;
+    font-weight: bold;
 }
 /*Containers*/
 .side-bar-container{
@@ -139,11 +140,7 @@ body{
 .tile{
     padding: 3px;
 }
-/*Faves Layout Grid*/
-#our-faves{
-    background-color: #ffffff;
-}
-/*helpers*/
+/*------------------------------------------------------ helpers------------------------------------------------------*/
 .o2-blue {
     color: #66CCCC;
 }
