@@ -67,9 +67,9 @@
 .ribbon-left{
     position: absolute;
     top: 28%;
-    left: -103%;
-    height: 321px;
-    width: 120px;
+    left: -69%;
+    height: 290px;
+    width: 80px;
     z-index: 1;
 }
 .ribbon-right{

