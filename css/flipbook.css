@@ -7,10 +7,14 @@
 #mobile-view #mobile-page-one{
     padding: 0 0 10px 0 !important;
 }
-/*---------------------------------------------- Desktop / Tablet View -----------------------------------------------*/
-body{
-    overflow:hidden;
+#gifts-50-mobile-layout-page-one{
+    background-color: #ffffff;
 }
+#gifts-50-mobile-layout-page-two{
+    background-color: #ffffff;
+}
+/*---------------------------------------------- Desktop / Tablet View -----------------------------------------------*/
+
 /*pager*/
 #pager {
     font-size: 3.25em;
@@ -18,7 +22,6 @@ body{
 .total-pages{
     color: #66CCCC;
     font-size: 0.65em;
-    font-weight: bold;
 }
 /*Containers*/
 .side-bar-container{
@@ -103,6 +106,7 @@ body{
 .book .page{
     height: 100%;
     padding: 0 !important;
+    border: solid 1px #CACACA;
 }
 .book .page img{
     max-width: 100%;
@@ -132,9 +136,6 @@ body{
 }
 #gifts-100-layout-grid .row{
     padding: 0 4%;
-}
-#grid-top{
-    padding-top: 2.5%
 }
 /*Grid Tiles*/
 .tile{
@@ -188,6 +189,7 @@ and (min-width: 768px){
     }
     #tablet-desktop-view{
         margin-left: 4.25%;
+        display: block !important;
     }
 }
 @media screen and (min-width: 1024px) {

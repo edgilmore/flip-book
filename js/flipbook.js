@@ -87,7 +87,8 @@ $('#previous').click(function() {
                 acceleration: true,
                 page: 2,
                 display: 'double',
-                height: 612
+                height: 612,
+                turnCorners: 'bl,br'
             });
             /*bind turn event on touch events to set pager number*/
             $(this.el).bind('turn', function(){
@@ -100,7 +101,6 @@ $('#previous').click(function() {
                 }
             });
             /*add over flow class to body and initial count of total pages text*/
-            document.body.className = 'hide-overflow';
             getTotalPages();
         }
     };
