@@ -108,13 +108,11 @@ body{
 }
 .book .book-page{
     height: 100%;
-    padding: 0 !important;
     border: solid 1px #CACACA;
 }
 .book .book-page img{
     max-width: 100%;
     height: 100%;
-    padding: 0 !important;
 }
 .book .hard{
     background: #66CCCC !important;
@@ -131,7 +129,6 @@ body{
     background-color: #ffffff
 }
 #gifts-100-layout-grid{
-    padding-top: 1%;
     background-color: #66CCCC;
 }
 #gifts-100-layout-grid .row:first-child{
@@ -167,6 +164,11 @@ body{
     text-transform: uppercase;
 }
 /*--------------------------------------------------------- media queries --------------------------------------------*/
+@media screen and (max-width: 64.063em) {
+    .hide-for-medium{
+        display: none !important;
+    }
+}
 @media screen and (max-width: 767px) {
     .arrow-right{
         position: relative;

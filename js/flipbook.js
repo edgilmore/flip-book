@@ -5,6 +5,7 @@
 /*variables that hold jquery objects*/
 var $flipbook = $('#book');
 var $pager =  $('#pager');
+var ga = ga || [];
 
 /*function to call on page scroll to reset page size and disable Zoyto scroll hacks@!!@@@!!!*/
 function stopScrollingMenu(){
@@ -36,101 +37,53 @@ function getTotalPages(){
  * next page
  */
 $('#next').click(function () {
-    $flipbook.turn('disabled', false).turn('next').turn('disabled', true);
+    $flipbook.turn('next');
     setPagerNumber(0);
     /*return false to avoid post back click handler*/
     return false;
 });
 //previous page
 $('#previous').click(function() {
-    $flipbook.turn('disabled', false).turn('previous').turn('disabled', true);
+    $flipbook.turn('previous');
     setPagerNumber(1);
     /*return false to avoid post back on click handler*/
     return false;
 });
-/* function used to dynamically resize the flip book based on window size */
-(function () {
-    'use strict';
-
-    var module = {
-        ratio: 1.38,
-        init: function (id) {
-            var me = this;
-            // if older browser then don't run javascript
-            if (document.addEventListener) {
-                this.el = document.getElementById(id);
-                this.resize();
-                this.plugins();
-
-                // on window resize, update the plugin size
-                window.addEventListener('resize', function () {
-                    var size = me.resize();
-                    $(me.el).turn('size', size.width, size.height);
-                });
-            }
-        },
-        resize: function () {
-            // reset the width and height to the css defaults
-            this.el.style.width = '';
-            this.el.style.height = '';
-
-            //david's hack
-            /*var scale = parseFloat($(window).height() / 1024);
-            $('#tablet-desktop-view').css({
-                '-webkit-transform': 'scale(' + scale + ')',
-                '-moz-transform': 'scale(' + scale + ')',
-                '-ms-transform': 'scale(' + scale + ')',
-                '-o-transform': 'scale(' + scale + ')',
-                'transform': 'scale(' + scale + ')'
-            });*/
-
-            var width = this.el.clientWidth,
-                height = Math.round(width / this.ratio),
-                padded = Math.round(document.body.clientHeight * 0.9);
-
-            // if the height is too big for the window, constrain it
-            if (height > padded) {
-                height = padded;
-                width = Math.round(height * this.ratio);
-            }
-
-            // set the width and height matching the aspect ratio
-            this.el.style.width = width + 'px';
-            this.el.style.height = height + 'px';
-
-            return {
-                width: width,
-                height: height
-            };
-        },
-        plugins: function () {
-            // run the plugin
-            $(this.el).turn({
-                gradients: true,
-                acceleration: true,
-                page: 2,
-                display: 'double',
-                height: 614,
-                width: 968
-            });
-            /*bind turn event on touch events to set pager number*/
-            $(this.el).bind('turn', function(){
-                setPagerNumber(1);
-            });
-            $(this.el).bind('turning', function(event, page){
-                //prevent page turn to the first page
-                if (page === 1) {
-                    event.preventDefault();
-                }
-            });
-            $(this.el).turn('disabled', true);              
-            /*add over flow class to body and initial count of total pages text*/
-            getTotalPages();
-        }
-    };
-    module.init('book');
-}());
-/*HACKS!!!*/
+/*function to collecting information about which page */
+(function sendGoogleAnchorClickAnalytics(){
+    $(document).ready(function () {
+        var hashtag = /#\S+/;
+        $('.book-page a').click(function () {
+            var match = $(this).attr('href').match(hashtag);
+            ga('send', 'pageview', location.pathname + match[0]);
+        });
+    });
+})();
+/*flipbook instantiation*/
+// run the plugin
+$($flipbook).turn({
+    gradients: true,
+    acceleration: true,
+    page: 2,
+    display: 'double',
+    height: 612,
+    width: 968
+});
+/*bind turn event on touch events to set pager number*/
+$($flipbook).bind('turn', function(){
+    setPagerNumber(1);
+});
+$($flipbook).bind('turning', function(event, page, pageObject){
+    //prevent page turn to the first page
+    if (page === 1) {
+        event.preventDefault();
+    }
+    /*log page turns to google analytics*/
+     (ga('send', 'event', 'FlipBook', 'Page Turn', 'Page',page));
+});
+/*add over flow class to body and initial count of total pages text*/
+getTotalPages();
+/*HACKS!!! -EWG*/
 $(document).ready(function(){
     stopScrollingMenu();    
     $(window).scroll(function(){
