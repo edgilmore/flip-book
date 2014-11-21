@@ -130,12 +130,7 @@ body{
 }
 #gifts-100-layout-grid{
     background-color: #66CCCC;
-}
-#gifts-100-layout-grid .row:first-child{
-    padding: 1% 4% 0;
-}
-#gifts-100-layout-grid .row{
-    padding: 0 4%;
+    padding-top: 0.5%;
 }
 /*Grid Tiles*/
 .tile{
