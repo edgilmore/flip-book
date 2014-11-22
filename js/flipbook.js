@@ -50,46 +50,44 @@ $('#previous').click(function() {
     return false;
 });
 /*function to collecting information about which page */
-(function sendGoogleAnchorClickAnalytics(){
-    $(document).ready(function () {
-        var hashtag = /#\S+/;
-        $('.book-page a').click(function () {
-            var match = $(this).attr('href').match(hashtag);
-            ga('send', 'pageview', location.pathname + match[0]);
-        });
+$(document).ready(function () {
+    $('.book-page a').click(function () {
+        var match = $(this).attr('href');
+        ga('send', 'pageview', location.pathname + match);
     });
-})();
-/*flipbook instantiation*/
-// run the plugin
-$($flipbook).turn({
-    gradients: true,
-    acceleration: true,
-    page: 2,
-    display: 'double',
-    height: 612,
-    width: 968
+    /*flipbook instantiation*/
+    // run the plugin
+    $($flipbook).turn({
+        gradients: true,
+        acceleration: true,
+        page: 2,
+        display: 'double',
+        height: 602,
+        width: 800
+    });
+    /*bind turn event on touch events to set pager number*/
+    $($flipbook).bind('turn', function(){
+        setPagerNumber(1);
+    });
+    $($flipbook).bind('turning', function(event, page, pageObject){
+        //prevent page turn to the first page
+        if (page === 1) {
+            event.preventDefault();
+        }
+        /*log page turns to google analytics*/
+        ga('send', 'event', 'FlipBook', 'Page Turn', 'Page', page);
+    });
+    /*add over flow class to body and initial count of total pages text*/
+    getTotalPages();
 });
-/*bind turn event on touch events to set pager number*/
-$($flipbook).bind('turn', function(){
-    setPagerNumber(1);
-});
-$($flipbook).bind('turning', function(event, page, pageObject){
-    //prevent page turn to the first page
-    if (page === 1) {
-        event.preventDefault();
-    }
-    /*log page turns to google analytics*/
-     (ga('send', 'event', 'FlipBook', 'Page Turn', 'Page',page));
-});
-/*add over flow class to body and initial count of total pages text*/
-getTotalPages();
+
 /*HACKS!!! -EWG*/
 $(document).ready(function(){
-    stopScrollingMenu();    
+    stopScrollingMenu();
     $(window).scroll(function(){
         stopScrollingMenu();
         /*hack to show nav after Zoyto tries to hide it*/
-        setTimeout(function(){            
+        setTimeout(function(){
             stopScrollingMenu();
         }, 125);
     });

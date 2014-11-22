@@ -109,6 +109,7 @@ body{
 .book .book-page{
     height: 100%;
     border: solid 1px #CACACA;
+    padding: 0 !important;
 }
 .book .book-page img{
     max-width: 100%;
@@ -159,11 +160,6 @@ body{
     text-transform: uppercase;
 }
 /*--------------------------------------------------------- media queries --------------------------------------------*/
-@media screen and (max-width: 64.063em) {
-    .hide-for-medium{
-        display: none !important;
-    }
-}
 @media screen and (max-width: 767px) {
     .arrow-right{
         position: relative;
@@ -177,10 +173,6 @@ body{
     #mobile-view{
         margin-left: 8.25% !important;
     }
-/*    #tablet-desktop-view{
-        margin-left: 4.25%;
-        display: block !important;
-    }*/
 }
 @media screen and (min-width: 1024px) {
     #tablet-desktop-view{
