@@ -14,10 +14,6 @@ function stopScrollingMenu(){
     $('.page').stop().animate({ 'top': '0' }, 500);
     $header.stop().animate({ 'top': '0'}, 500);
     $fadeNav.stop().removeClass('fadeout');
-    /*setTimeout(function()
-        {
-            //$header.removeAttr('id');
-        }, 500);*/
 }
 /*function to set page number text below flip book*/
 function setPagerNumber(pageNumber) {
@@ -62,14 +58,14 @@ $(document).ready(function () {
         acceleration: true,
         page: 2,
         display: 'double',
-        height: 602,
-        width: 800
+        height: 612,
+        width: 963
     });
     /*bind turn event on touch events to set pager number*/
     $($flipbook).bind('turn', function(){
         setPagerNumber(1);
     });
-    $($flipbook).bind('turning', function(event, page, pageObject){
+    $($flipbook).bind('turning', function(event, page){
         //prevent page turn to the first page
         if (page === 1) {
             event.preventDefault();
@@ -81,7 +77,7 @@ $(document).ready(function () {
     getTotalPages();
 });
 
-/*HACKS!!! -EWG*/
+/*HACKS!!! - EWG*/
 $(document).ready(function(){
     stopScrollingMenu();
     $(window).scroll(function(){
