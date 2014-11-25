@@ -17,7 +17,10 @@ body{
     background-color: #ffffff;
 }
 /*---------------------------------------------- Desktop / Tablet View -----------------------------------------------*/
-
+/*logo*/
+#tablet-desktop-logo{
+    padding: 2.5% 0;
+}
 /*pager*/
 #pager {
     font-size: 3.25em;
@@ -45,6 +48,7 @@ body{
     left: -115%;
     height: 50px;
     width: 33px;
+    display: none;
 }
 .arrow-right {
     position: absolute;

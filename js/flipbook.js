@@ -25,6 +25,25 @@ function setPagerNumber(pageNumber) {
         $pager.hide();
     }
 }
+/*function to hide arrow at the end of flip book*/
+function checkLastPage(){
+    var totalPages = $flipbook.turn('pages') - 1;
+    var currentPage = $flipbook.turn('page');
+    var $arrowRight = $('.arrow-right');
+    var $arrowLeft = $('.arrow-left');
+    if(currentPage === totalPages){
+        $arrowRight.hide();
+    }
+    else{
+        $arrowRight.show();
+    }
+    if(currentPage === 3){
+        $arrowLeft.hide();
+    }
+    else{
+        $arrowLeft.show();
+    }
+}
 /*function to set page number text for count of total pages*/
 function getTotalPages(){
     $('#page-number-two').text(Math.floor($flipbook.turn('pages') / 2));
@@ -64,6 +83,7 @@ $(document).ready(function () {
     /*bind turn event on touch events to set pager number*/
     $($flipbook).bind('turn', function(){
         setPagerNumber(1);
+        checkLastPage();
     });
     $($flipbook).bind('turning', function(event, page){
         //prevent page turn to the first page
