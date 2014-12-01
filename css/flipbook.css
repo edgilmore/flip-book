@@ -135,7 +135,7 @@ body{
 }
 #gifts-100-layout-grid{
     background-color: #66CCCC;
-    padding-top: 0.5%;
+    padding-top: 0.5% !important;
 }
 /*Grid Tiles*/
 .tile{
